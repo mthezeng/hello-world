@@ -1,9 +1,13 @@
 def get_input():
-    while True:
+    done = False
+    while not done:
         try:
             points = int(input('How many points does the post have?: '))
-            ratio = int(input('What is the percentage of users who upvoted the post?: '))
-            break
+            if points > 0:
+                ratio = int(input('What is the percentage of users who upvoted the post?: '))
+                done = True
+            else:
+                print('Reddit does not currently display percentages for zero or negative scores.')
         except ValueError:
             print('Your values must be integers.')
     return points, ratio
