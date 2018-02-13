@@ -12,7 +12,7 @@ def reddit_votes(points, ratio):
     votes = points / ((ratio / 50) - 1)
     upvotes = votes * (ratio / 100)
     downvotes = votes - upvotes
-    return round(votes), round(upvotes), round(downvotes)
+    return round(upvotes) + round(downvotes), round(upvotes), round(downvotes)
 
 def print_output(votes, upvotes, downvotes):
     if votes == 1:
